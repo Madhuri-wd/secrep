@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple 3x3 Grid Layout</title>
+  <style>
+    :root{
+      --gap: 14px;
+      --card-height: 140px;
+    }
+
+    /* page layout */
+    body{
+      margin: 24px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #fff;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrapper{
+      width: 100%;
+      max-width: 980px;            /* adjust container width */
+    }
+
+    h1{ color:#222; font-size:18px; margin-bottom:12px; }
+
+    /* grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+      align-items: stretch;
+    }
+
+    .card {
+      height: var(--card-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 600;
+      border-radius: 2px;
+      box-shadow: 0 0 0 6px #ffffff inset; /* white "gutter" look like the reference */
+      color: #fff;
+      user-select: none;
+    }
+
+    /* approximate colors to match the image */
+    .c2  { background:#ff4a00; }   /* 2 - orange */
+    .c3  { background:#3b66e6; }   /* 3 - blue */
+    .c4  { background:#ffd200; color:#222; } /* 4 - yellow (make numbers darker) */
+    .c5  { background:#7b2bd9; }   /* 5 - purple */
+    .c6  { background:#2ecc40; color:#fff; } /* 6 - green */
+    .c1  { background:#09c6f2; }   /* 1 - cyan */
+    .c7  { background:#ff8f76; color:#222; } /* 7 - coral */
+    .c8  { background:#22a8a0; }   /* 8 - teal */
+    .c9  { background:#6f0000; }   /* 9 - maroon */
+
+    /* make the inner number slightly translucent shadow so it pops */
+    .card span{
+      text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    }
+
+    /* responsive: reduce height on small screens */
+    @media (max-width:600px){
+      :root{ --card-height: 100px; }
+      .card{ font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Simple grid layout (match image)</h1>
+
+    <!-- DOM ordering matches the visual layout: 2,3,4 / 5,6,1 / 7,8,9 -->
+    <div class="grid">
+      <div class="card c2"><span>2.</span></div>
+      <div class="card c3"><span>3.</span></div>
+      <div class="card c4"><span>4.</span></div>
+
+      <div class="card c5"><span>5.</span></div>
+      <div class="card c6"><span>6.</span></div>
+      <div class="card c1"><span>1.</span></div>
+
+      <div class="card c7"><span>7.</span></div>
+      <div class="card c8"><span>8.</span></div>
+      <div class="card c9"><span>9.</span></div>
+    </div>
+  </div>
+</body>
+</html>
