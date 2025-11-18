@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Masai Calculator</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            width: 230px;
+            padding: 20px;
+            border: 2px solid #dcdcdc;
+            border-radius: 10px;
+        }
+
+        .display {
+            width: 100%;
+            height: 50px;
+            border: 2px solid #dcdcdc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .clear {
+            background: red;
+            color: white;
+        }
+
+        .number {
+            background: #f0f0f0;
+        }
+
+        .operator {
+            background: black;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="calculator">
+
+        <div class="display"></div>
+
+        <div class="buttons">
+            <button class="btn clear">C</button>
+            <button class="btn number">7</button>
+            <button class="btn number">8</button>
+            <button class="btn number">9</button>
+
+            <button class="btn operator">÷</button>
+            <button class="btn number">4</button>
+            <button class="btn number">5</button>
+            <button class="btn number">6</button>
+
+            <button class="btn operator">×</button>
+            <button class="btn number">1</button>
+            <button class="btn number">2</button>
+            <button class="btn number">3</button>
+
+            <button class="btn operator">-</button>
+            <button class="btn number">0</button>
+            <button class="btn operator">=</button>
+            <button class="btn operator">+</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
